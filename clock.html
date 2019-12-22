@@ -26,11 +26,15 @@
     <div class="number number11">11</div>
     <div class="number number12">12</div>
   </div>
-  <span id="view_time"></span>
+  <span id="view_clock"></span>
 
   <script type="text/javascript">
-  document.getElementById("view_time").innerHTML = getNow();
-
+  timerID = setInterval('clock()',500);
+  
+  function clock() {
+    document.getElementById("view_clock").innerHTML = getNow();
+  }
+  
   function getNow() {
     var now = new Date();
     var year = now.getFullYear();
@@ -39,7 +43,9 @@
     var hour = now.getHours();
     var min = now.getMinutes();
     var sec = now.getSeconds();
-    var s = year + "年" + mon + "月" + day + "日" + hour + "時" + min + "分" + sec + "秒";
+  
+    //出力用
+    var s = year + "年" + mon + "月" + day + "日" + hour + "時" + min + "分" + sec + "秒"; 
     return s;
   }
   </script>
