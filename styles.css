@@ -80,3 +80,10 @@ body {
     height: 35%;
     background-color: black;
 }
+
+#view_time {
+    width: 208px;
+    height: 100%;
+    background-color: black;
+    color: blanchedalmond;
+}
