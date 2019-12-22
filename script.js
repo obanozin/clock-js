@@ -32,13 +32,9 @@ let startTime;
 let timerId;
 let timeToAdd = 0;
 
-// 表示される内容をアップデートする関数
 const updateTimeText = () => {
-  // 1分 = 1000 ミリ秒 * 60秒
   let m = Math.floor(elapsedTime / (1000 * 60));
-  // 1分に満たなかったミリ秒のうち，秒となったもの
   let s = Math.floor((elapsedTime % (1000 * 60)) / 1000);
-  // 1秒になれなかったもの
   let ms = elapsedTime % 1000;
 
   // ゼロパディング
