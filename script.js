@@ -37,7 +37,6 @@ const updateTimeText = () => {
   let s = Math.floor((elapsedTime % (1000 * 60)) / 1000);
   let ms = elapsedTime % 1000;
 
-  // ゼロパディング
   m = `0${m}`.slice(-2);
   s = `0${s}`.slice(-2);
   ms = `00${ms}`.slice(-3);
@@ -45,7 +44,6 @@ const updateTimeText = () => {
   timer.textContent = `${m}:${s}:${ms}`;
 };
 
-// 経過時間の管理と計算を行う関数
 const countUp = () => {
   timerId = setTimeout(() => {
     elapsedTime = Date.now() - startTime + timeToAdd;
@@ -67,6 +65,5 @@ stop.addEventListener("click", () => {
 reset.addEventListener("click", () => {
   elapsedTime = 0;
   timeToAdd = 0;
-  // 00:00:000 を表示
   updateTimeText();
 });
